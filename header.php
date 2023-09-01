@@ -29,55 +29,85 @@
    </script>
 </head>
 
-<body <?php body_class(); ?> id="id_<?php echo get_the_ID(); ?>" data-template="<?php
- global $template; echo basename($template); ?>">
+<body <?php body_class(); ?> id="id_<?php echo get_the_ID(); ?>" data-template="<?php global $template; echo basename($template); ?>">
    <?php wp_body_open(); ?>
    <?php global $g; ?>
 
-   <header class="header">
-      <div class="container">
-         <div class="header__box sbox">
+   <header class="nheader">
+      <div class="container container_1290">
+         <div class="nheader__box sbox">
             <div>
-               <button class="header__menu-btn">
-                  <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>/assets/img/icons/Menu.svg" alt="">
-               </button>
-            </div>
-            <div>
-               <a href="#" class="header__logo">
-                  <img loading="lazy" src="<?php echo get_field("logo", "options")["url"]; ?>" alt="">
+               <a href="<?php echo home_url(); ?>" class="nheader__logo">
+                  <img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo.svg" alt="">
                </a>
             </div>
             <div>
-               <?php ob_start(); ?>
-               <ul class="header__btns">
-                  <?php
-                  $items = get_field("right_icons", "options");
-                  foreach ($items as $item) {
-                  ?>
-                     <li>
-                        <a href="<?php echo $item["link"]; ?>" class="header__btn" title="<?php echo $item["title"]; ?>">
-                           <img loading="lazy" src="<?php echo $item["icon"]["url"]; ?>" alt="">
-                        </a>
-                     </li>
-                  <?php }
-                  wp_reset_postdata(); ?>
-               </ul>
-               <?php $header__btns = ob_get_clean(); ?>
-               <?php echo $header__btns; ?>
+               <button class="nheader__menu-btn">
+                  <span></span><span></span><span></span>
+               </button>
             </div>
          </div>
-      </div>
-      <div class="header__nav-bg"></div>
-      <nav class="header__nav">
+         <nav class="nheader__nav">
          <?php
          wp_nav_menu(array(
-            'theme_location' => 'main-menu',
-            'menu_class' => 'header__menu',
+            'theme_location' => 'header-menu',
+            'menu_class' => 'nheader__menu',
             'container' => '',
          ));
          ?>
-         <?php echo $header__btns; ?>
-         <button class="header__nav-close"><span></span><span></span></button>
-      </nav>
+         </nav>
+      </div>
    </header>
-   <main class="main">
+
+   <main class="main nmain">
+
+
+<?php if (false) { ?>
+<header class="header">
+   <div class="container">
+      <div class="header__box sbox">
+         <div>
+            <button class="header__menu-btn">
+               <img loading="lazy" src="<?php echo bloginfo('template_url'); ?>/assets/img/icons/Menu.svg" alt="">
+            </button>
+         </div>
+         <div>
+            <a href="#" class="header__logo">
+               <img loading="lazy" src="<?php echo get_field("logo", "options")["url"]; ?>" alt="">
+            </a>
+         </div>
+         <div>
+            <?php ob_start(); ?>
+            <ul class="header__btns">
+               <?php
+               $items = get_field("right_icons", "options");
+               foreach ($items as $item) {
+               ?>
+                  <li>
+                     <a href="<?php echo $item["link"]; ?>" class="header__btn" title="<?php echo $item["title"]; ?>">
+                        <img loading="lazy" src="<?php echo $item["icon"]["url"]; ?>" alt="">
+                     </a>
+                  </li>
+               <?php }
+               wp_reset_postdata(); ?>
+            </ul>
+            <?php $header__btns = ob_get_clean(); ?>
+            <?php echo $header__btns; ?>
+         </div>
+      </div>
+   </div>
+   <div class="header__nav-bg"></div>
+   <nav class="header__nav">
+      <?php
+      wp_nav_menu(array(
+         'theme_location' => 'main-menu',
+         'menu_class' => 'header__menu',
+         'container' => '',
+      ));
+      ?>
+      <?php echo $header__btns; ?>
+      <button class="header__nav-close"><span></span><span></span></button>
+   </nav>
+</header>
+<main class="main">
+<?php } ?>

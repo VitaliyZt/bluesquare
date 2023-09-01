@@ -108,9 +108,23 @@ function custom_theme_menus() {
 	register_nav_menu('main-menu', 'Main menu');
 	register_nav_menu('footer-menu-1', 'Footer menu 1');
 	register_nav_menu('footer-menu-2', 'Footer menu 2');
+	register_nav_menu('header-menu', 'Header menu');
 }
 
 add_action('after_setup_theme', 'custom_theme_menus');
+
+
+function get_page_id_by_template_name($template_name) {
+	global $wpdb;
+	// Query the database for the page ID based on the template name
+	$page_id = $wpdb->get_var(
+		 $wpdb->prepare(
+			  "SELECT post_id FROM $wpdb->postmeta WHERE meta_key='_wp_page_template' AND meta_value=%s",
+			  $template_name
+		 )
+	);
+	return $page_id;
+}
 
 
 

@@ -1,5 +1,6 @@
 <?php /* Template Name: Software */ ?>
 <?php get_header(); ?>
+<?php $contacts_link = get_permalink(get_page_id_by_template_name("contact_us.php")); ?>
 
 <section class="s51">
    <div class="container container_1290">
@@ -7,23 +8,26 @@
          <div>
             <div class="s51__main">
                <div class="s51__heading">
-                  <h2 class="s51__title"><?php the_field("s51_title"); ?></h2>
-                  <p class="s51__subtitle"><?php the_field("s51_text"); ?></p>
+                  <h2 class="s51__title wow animate__animated animate__fadeInRight" data-wow-offset="0"><?php the_field("s51_title"); ?></h2>
+                  <p class="s51__subtitle wow animate__animated animate__fadeIn" data-wow-delay="0.5s" data-wow-offset="0"><?php the_field("s51_text"); ?></p>
                </div>
-               <a href="<?php the_field("s51_button_link"); ?>" class="s51__btn sbtn sbtn_2"><?php the_field("s51_button_text"); ?></a>
+               <a href="<?php echo $contacts_link; ?>" class="s51__btn sbtn sbtn_2 wow animate__animated animate__fadeIn" data-wow-delay="1s" data-wow-offset="0"><?php the_field("s51_button_text"); ?></a>
             </div>
          </div>
          <div>
+         <?php if(false){ ?>            
             <picture class="s51__img">
                <source srcset="<?php echo get_field("s51_image_webp")["url"]; ?>" type="image/webp">
                <img loading="lazy" src="<?php echo get_field("s51_image_png")["url"]; ?>" alt="">
             </picture>
+         <?php } ?>            
+         <?php get_template_part("templates/video"); ?>
          </div>
       </div>
    </div>
 </section>
 
-<section class="s52 gradient-bg">
+<section class="s52 gradient-bg wow animate__animated animate__fadeInUp">
    <div class="container container_1290">
       <div class="s52__heading">
          <h3 class="s52__title nstitle"><?php the_field("s52_title"); ?></h3>
@@ -57,7 +61,7 @@
 <section class="s53">
    <div class="container container_1290">
       <div class="s53__wrap">
-         <div class="s53__top">
+         <div class="s53__top wow animate__animated animate__fadeInUp">
             <h3 class="s53__title nstitle-2"><?php the_field("s53_title"); ?></h3>
             <p class="s53__text"><?php the_field("s53_text"); ?></p>
          </div>
@@ -117,7 +121,7 @@
    </svg>
 </section>
 
-<section class="s54">
+<section class="s54 wow animate__animated animate__fadeInUp">
    <div class="container container_1290">
       <div class="s54__box sbox">
          <div>

@@ -7,14 +7,14 @@
          <h4 class="s31__subtitle"><?php the_field("s31_subtitle"); ?></h4>
          <h1 class="s31__title nstitle-big"><?php the_field("s31_title"); ?></h1>
       </div>
-      <p class="s31__text"><?php the_field("s31_text"); ?></p>
+      <p class="s31__text wow animate__animated animate__fadeInUp"><?php the_field("s31_text"); ?></p>
    </div>
 </section>
 
 <section class="s32 gradient-bg">
    <div class="container container_1290">
-      <h3 class="s32__title nstitle"><?php the_field("s32_title"); ?></h3>
-      <div class="s32__text"><?php the_field("s32_text"); ?></div>
+      <h3 class="s32__title nstitle wow animate__animated animate__fadeInUp"><?php the_field("s32_title"); ?></h3>
+      <div class="s32__text wow animate__animated animate__fadeInUp" data-wow-delay="0.5s"><?php the_field("s32_text"); ?></div>
    </div>
 </section>
 

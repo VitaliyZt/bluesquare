@@ -1,5 +1,6 @@
 <?php /* Template Name: Hardware */ ?>
 <?php get_header(); ?>
+<?php $contacts_link = get_permalink(get_page_id_by_template_name("contact_us.php")); ?>
 
 <section class="s51 s51_2">
    <div class="container container_1290">
@@ -7,23 +8,26 @@
          <div>
             <div class="s51__main">
                <div class="s51__heading">
-                  <h2 class="s51__title"><?php the_field("s51_2_title"); ?></h2>
-                  <p class="s51__subtitle"><?php the_field("s51_2_text"); ?></p>
+                  <h2 class="s51__title wow animate__animated animate__fadeInRight" data-wow-offset="0"><?php the_field("s51_2_title"); ?></h2>
+                  <p class="s51__subtitle wow animate__animated animate__fadeIn" data-wow-delay="0.5s" data-wow-offset="0"><?php the_field("s51_2_text"); ?></p>
                </div>
-               <a href="<?php the_field("s51_2_button_link"); ?>" class="s51__btn sbtn sbtn_2"><?php the_field("s51_2_button_text"); ?></a>
+               <a href="<?php echo $contacts_link; ?>" class="s51__btn sbtn sbtn_2 wow animate__animated animate__fadeIn" data-wow-delay="1s" data-wow-offset="0"><?php the_field("s51_2_button_text"); ?></a>
             </div>
          </div>
          <div>
+            <?php if(false){ ?>    
             <picture class="s51__img">
                <source srcset="<?php echo get_field("s51_2_image_webp")["url"]; ?>" type="image/webp">
                <img loading="lazy" src="<?php echo get_field("s51_2_image_png")["url"]; ?>" alt="">
             </picture>
+         <?php } ?>            
+         <?php get_template_part("templates/video"); ?>
          </div>
       </div>
    </div>
 </section>
 
-<section class="s58 gradient-bg">
+<section class="s58 gradient-bg wow animate__animated animate__fadeInUp">
    <div class="container container_1290">
       <h2 class="s58__title nstitle"><?php the_field("s58_title"); ?></h2>
       <p class="s58__text"><?php the_field("s58_text"); ?></p>
@@ -32,7 +36,7 @@
 
 <section class="s59">
    <div class="container container_1290">
-      <div class="s59__heading">
+      <div class="s59__heading wow animate__animated animate__fadeInUp">
          <h2 class="s59__title nstitle"><?php the_field("s59_title"); ?></h2>
          <p class="s59__text"><?php the_field("s59_text"); ?></p>
       </div>
@@ -172,7 +176,7 @@
             <div class="s511__main">
                <h3 class="s511__title nstitle-2"><?php the_field("s511_title"); ?></h3>
                <p class="s511__text"><?php the_field("s511_text"); ?></p>
-               <a href="<?php the_field("s511_button_link"); ?>" class="s511__btn sbtn sbtn_2"><?php the_field("s511_button_text"); ?></a>
+               <a href="<?php echo $contacts_link; ?>" class="s511__btn sbtn sbtn_2"><?php the_field("s511_button_text"); ?></a>
             </div>
          </div>
          <div>
@@ -215,7 +219,7 @@
 
       </ul>   
 
-      <a href="<?php the_field("s55_button_link"); ?>" class="s55__btn sbtn sbtn_2"><?php the_field("s55_button_text"); ?></a>
+      <a href="<?php echo $contacts_link; ?>" class="s55__btn sbtn sbtn_2"><?php the_field("s55_button_text"); ?></a>
 
       <svg class="svg-mask">
          <clipPath id="my-clip-path-1" clipPathUnits="objectBoundingBox"><path d="M0,0.894 C0,0.901,0.004,0.907,0.01,0.908 L0.989,1 C0.995,1,1,0.995,1,0.987 L1,0.015 C1,0.007,0.995,0,0.989,0.001 L0.01,0.069 C0.004,0.07,0,0.076,0,0.083 L0,0.894"></path></clipPath>
